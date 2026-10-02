@@ -1,0 +1,15 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Registration</title><link rel="stylesheet" href="/style.css"></head><body>
+<main><h1>User Registration</h1>
+<% if (errors.length) { %><div class="error"><strong>Please fix these fields:</strong><ul><% errors.forEach(item => { %><li><%= item.msg %></li><% }) %></ul></div><% } %>
+<% if (uploadError) { %><p class="error"><%= uploadError %></p><% } %>
+<form action="/register" method="post" enctype="multipart/form-data">
+<label>Username<input name="username" value="<%= values.username || '' %>" required></label>
+<label>Password<input type="password" name="password" value="<%= values.password || '' %>" required></label>
+<label>Confirm password<input type="password" name="confirmPassword" value="<%= values.confirmPassword || '' %>" required></label>
+<label>Email<input type="email" name="email" value="<%= values.email || '' %>" required></label>
+<fieldset><legend>Gender</legend><div class="choice-list"><% ['Male','Female','Other'].forEach(item => { %><label class="choice"><input type="radio" name="gender" value="<%= item %>" <%= values.gender === item ? 'checked' : '' %>> <%= item %></label><% }) %></div></fieldset>
+<fieldset><legend>Hobbies</legend><div class="choice-list"><% ['Reading','Music','Sports','Travel'].forEach(item => { %><label class="choice"><input type="checkbox" name="hobbies" value="<%= item %>" <%= (values.hobbies || []).includes(item) ? 'checked' : '' %>> <%= item %></label><% }) %></div></fieldset>
+<label>Profile picture (one image)<input type="file" name="profilePic" accept="image/*" required></label>
+<label>Other pictures (up to five)<input type="file" name="otherPics" accept="image/*" multiple></label>
+<p class="hint">Images only, maximum 3 MB each.</p><button>Register</button></form></main></body></html>

@@ -1,0 +1,7 @@
+{
+  "name": "assignment-3-redis-session-login",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "scripts": { "start": "node app.js", "dev": "node app.js" },
+  "dependencies": { "connect-redis": "^8.0.2", "ejs": "^3.1.10", "express": "^4.21.2", "express-session": "^1.18.1", "redis": "^4.7.0" }
+}

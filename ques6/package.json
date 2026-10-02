@@ -1,0 +1,7 @@
+{
+  "name": "assignment-6-weather-api",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "scripts": { "start": "node app.js", "dev": "node app.js" },
+  "dependencies": { "express": "^4.21.2" }
+}

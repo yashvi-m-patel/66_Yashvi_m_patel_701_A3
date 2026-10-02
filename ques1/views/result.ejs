@@ -1,0 +1,7 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Registration complete</title><link rel="stylesheet" href="/style.css"></head><body><main>
+<h1>Registration Details</h1><table><tbody>
+<tr><th>Username</th><td><%= values.username %></td></tr><tr><th>Email</th><td><%= values.email %></td></tr><tr><th>Gender</th><td><%= values.gender %></td></tr><tr><th>Hobbies</th><td><%= values.hobbies.join(', ') %></td></tr>
+<tr><th>Profile picture</th><td><% if (profilePic) { %><img src="/uploads/<%= profilePic.filename %>" alt="Profile"><br><a href="/download/<%= profilePic.filename %>">Download profile picture</a><% } %></td></tr>
+<tr><th>Other pictures</th><td><% otherPics.forEach(file => { %><span class="photo"><img src="/uploads/<%= file.filename %>" alt="Uploaded picture"><a href="/download/<%= file.filename %>">Download</a></span><% }) %></td></tr>
+</tbody></table><a href="/">Register another user</a></main></body></html>
